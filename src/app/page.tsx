@@ -527,7 +527,7 @@ export default function ChatSaidLanding() {
                       href={project.href}
                       className={`w-full py-2.5 px-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm group-hover:gap-3`}
                     >
-                      {project.status === 'live' ? 'Launch' : project.status === 'beta' ? 'Try Beta' : 'Learn More'}
+                      {project.status === 'live' ? 'Launch' : project.status === 'beta' ? 'Try Beta' : project.status === 'research' ? 'View Research' : 'Learn More'}
                       <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
