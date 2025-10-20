@@ -5,13 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ChatSaid - AI-powered therapy tools',
-  description: 'Science-informed, AI-enhanced tools to support your therapeutic journey. Built with care, guided by research, designed for insight.',
-  keywords: ['mental health', 'therapy tools', 'AI', 'wellness', 'self-care'],
-  authors: [{ name: 'ChatSaid Team' }],
+  title: 'ChatSaid - AI-Enhanced Innovation Lab',
+  description: 'A portfolio of AI-enhanced projects spanning mental health, civic technology, democracy tools, and far-out computing concepts. Where AI meets audacious ideas.',
+  keywords: ['AI innovation', 'mental health tools', 'civic technology', 'democracy tools', 'NLP research', 'computing paradigms', 'therapy tools', 'anti-corruption', 'participatory democracy'],
+  authors: [{ name: 'ChatSaid Innovation Lab' }],
   openGraph: {
-    title: 'ChatSaid - AI-powered therapy tools',
-    description: 'Science-informed, AI-enhanced tools to support your therapeutic journey.',
+    title: 'ChatSaid - AI-Enhanced Innovation Lab',
+    description: 'A portfolio of AI-enhanced projects spanning mental health, civic technology, democracy tools, and far-out computing concepts.',
     type: 'website',
   },
 }

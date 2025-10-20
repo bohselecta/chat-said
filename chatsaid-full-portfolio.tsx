@@ -22,7 +22,7 @@ export default function ChatSaidLanding() {
       category: 'therapy' as const,
       tagline: 'Say what you mean, kindly',
       description: 'AI-powered relationship communication that transforms raw feelings into aligned messages using Gottman Method science.',
-      logo: '/kindline-logo.svg',
+      icon: Heart,
       color: 'from-rose-500 to-pink-500',
       lightColor: 'from-rose-50 to-pink-50',
       href: '/kindline',
@@ -35,7 +35,7 @@ export default function ChatSaidLanding() {
       category: 'therapy' as const,
       tagline: 'Understand your patterns',
       description: 'Young Schema Therapy questionnaire for identifying core emotional patterns and early maladaptive schemas.',
-      logo: '/schema-logo.png',
+      icon: Brain,
       color: 'from-purple-500 to-indigo-500',
       lightColor: 'from-purple-50 to-indigo-50',
       href: '/schema',
@@ -48,7 +48,7 @@ export default function ChatSaidLanding() {
       category: 'therapy' as const,
       tagline: 'Present moment awareness',
       description: 'ACT-based tool for psychological flexibility, values clarification, and mindful acceptance.',
-      logo: '/mindlight-logo.svg',
+      icon: Compass,
       color: 'from-blue-500 to-cyan-500',
       lightColor: 'from-blue-50 to-cyan-50',
       href: '/mindlight',
@@ -177,12 +177,8 @@ export default function ChatSaidLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 flex items-center justify-center">
-                <img 
-                  src="/graphic-logo-mark.svg" 
-                  alt="ChatSaid Logo" 
-                  className="w-8 h-8"
-                />
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                <Sparkles className="text-white" size={22} />
               </div>
               <div>
                 <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -274,8 +270,8 @@ export default function ChatSaidLanding() {
 
         {/* Animated Background */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" />
-        <div className="absolute top-40 right-10 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow animate-delay-1000" />
-        <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow animate-delay-2000" />
+        <div className="absolute top-40 right-10 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </section>
 
       {/* Projects Section */}
@@ -311,6 +307,7 @@ export default function ChatSaidLanding() {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => {
+              const Icon = project.icon;
               const statusStyle = statusStyles[project.status];
               
               return (
@@ -325,18 +322,8 @@ export default function ChatSaidLanding() {
                       {statusStyle.label}
                     </div>
                     
-                    <div className="w-12 h-12 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                      {project.logo ? (
-                        <img 
-                          src={project.logo} 
-                          alt={`${project.name} Logo`}
-                          className="w-10 h-10 object-contain"
-                        />
-                      ) : (
-                        <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center`}>
-                          {project.icon && <project.icon className="text-white" size={24} />}
-                        </div>
-                      )}
+                    <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                      <Icon className="text-white" size={24} />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900 mb-1">
                       {project.name}
@@ -462,12 +449,8 @@ export default function ChatSaidLanding() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <img 
-                    src="/graphic-logo-mark.svg" 
-                    alt="ChatSaid Logo" 
-                    className="w-6 h-6"
-                  />
+                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                  <Sparkles className="text-white" size={18} />
                 </div>
                 <span className="font-bold text-white">ChatSaid</span>
               </div>
