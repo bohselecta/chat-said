@@ -3,12 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --font-display: "Inter", "SF Pro Display", "Helvetica Neue", sans-serif;
+    --font-body: "IBM Plex Sans", "Inter", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+  }
+
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
   
   body {
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'lnum' 1;
   }
 }
 

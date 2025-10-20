@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { 
   Heart, Brain, MessageCircle, Compass, ArrowRight, Sparkles, Shield, Users,
   Scale, Eye, Zap, Network, Lightbulb, BookOpen, Code, Globe, Lock, 
-  TrendingUp, Target, Layers, Cpu, Binary, Waypoints, Dog
+  TrendingUp, Target, Layers, Cpu, Binary, Waypoints
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -22,7 +22,7 @@ export default function ChatSaidLanding() {
       category: 'therapy' as const,
       tagline: 'Say what you mean, kindly',
       description: 'AI-powered relationship communication that transforms raw feelings into aligned messages using Gottman Method science.',
-      logo: '/kindline-logo.svg',
+      icon: Heart,
       color: 'from-rose-500 to-pink-500',
       lightColor: 'from-rose-50 to-pink-50',
       href: '/kindline',
@@ -35,7 +35,7 @@ export default function ChatSaidLanding() {
       category: 'therapy' as const,
       tagline: 'Understand your patterns',
       description: 'Young Schema Therapy questionnaire for identifying core emotional patterns and early maladaptive schemas.',
-      logo: '/schema-logo.png',
+      icon: Brain,
       color: 'from-purple-500 to-indigo-500',
       lightColor: 'from-purple-50 to-indigo-50',
       href: '/schema',
@@ -48,7 +48,7 @@ export default function ChatSaidLanding() {
       category: 'therapy' as const,
       tagline: 'Present moment awareness',
       description: 'ACT-based tool for psychological flexibility, values clarification, and mindful acceptance.',
-      logo: '/mindlight-logo.svg',
+      icon: Compass,
       color: 'from-blue-500 to-cyan-500',
       lightColor: 'from-blue-50 to-cyan-50',
       href: '/mindlight',
@@ -177,40 +177,27 @@ export default function ChatSaidLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img 
-                  src="/graphic-logo-mark.svg" 
-                  alt="ChatSaid Logo" 
-                  className="w-10 h-10"
-                />
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                <Sparkles className="text-white" size={22} />
               </div>
               <div>
-                <h1 className="font-display font-semibold text-step-2 tracking-tight-display" style={{ color: '#303B48' }}>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   ChatSaid
                 </h1>
-                <p className="font-body text-step--2 text-gray-600 tracking-small-caps">AI-Enhanced Innovation Lab</p>
+                <p className="text-xs text-gray-600">AI-Enhanced Innovation Lab</p>
               </div>
             </div>
             
             <nav className="hidden md:flex gap-6">
-              <button 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body font-medium text-step-0 text-gray-600 hover:text-gray-900 transition-colors"
-              >
+              <a href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Projects
-              </button>
-              <button 
-                onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body font-medium text-step-0 text-gray-600 hover:text-gray-900 transition-colors"
-              >
+              </a>
+              <a href="#story" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Story
-              </button>
-              <button 
-                onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body font-medium text-step-0 text-gray-600 hover:text-gray-900 transition-colors"
-              >
+              </a>
+              <a href="#philosophy" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Philosophy
-              </button>
+              </a>
             </nav>
           </div>
         </div>
@@ -229,23 +216,20 @@ export default function ChatSaidLanding() {
             </div>
 
             {/* Main Headline */}
-            <h2 className="font-display font-semibold text-step-5 text-gray-900 mb-6 tracking-tight-display leading-display">
+            <h2 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Where AI meets
               <br />
-              <img 
-                src="/audacious-ideas.png" 
-                alt="audacious ideas" 
-                className="inline-block w-[50vw] h-auto mt-2 sm:w-[40vw] md:w-[30vw] lg:w-[25vw] xl:w-[20vw] 2xl:w-[15vw] 2xl:max-w-md relative z-10"
-                style={{ mixBlendMode: 'normal' }}
-              />
+              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                audacious ideas
+              </span>
             </h2>
 
             {/* Subheadline */}
-            <p className="font-body text-step-1 text-gray-600 mb-4 leading-relaxed">
+            <p className="text-xl lg:text-2xl text-gray-600 mb-4 leading-relaxed">
               A portfolio of AI-enhanced projects spanning mental health, civic technology, 
               democracy tools, and far-out computing concepts.
             </p>
-            <p className="font-body text-step-0 text-gray-500 mb-8">
+            <p className="text-lg text-gray-500 mb-8">
               Each one started with a conversation. Each one pushes boundaries.
             </p>
 
@@ -267,27 +251,27 @@ export default function ChatSaidLanding() {
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              <a
+                href="#projects"
                 className="px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
               >
                 Explore Projects
                 <ArrowRight size={20} />
-              </button>
-              <button
-                onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
+              </a>
+              <a
+                href="#story"
                 className="px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all border-2 border-gray-200"
               >
                 Read the Story
-              </button>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Animated Background */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" />
-        <div className="absolute top-40 right-10 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow animate-delay-1000" />
-        <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow animate-delay-2000" />
+        <div className="absolute top-40 right-10 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </section>
 
       {/* Projects Section */}
@@ -323,6 +307,7 @@ export default function ChatSaidLanding() {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => {
+              const Icon = project.icon;
               const statusStyle = statusStyles[project.status];
               
               return (
@@ -337,18 +322,8 @@ export default function ChatSaidLanding() {
                       {statusStyle.label}
                     </div>
                     
-                    <div className="w-12 h-12 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                      {project.logo ? (
-                        <img 
-                          src={project.logo} 
-                          alt={`${project.name} Logo`}
-                          className="w-10 h-10 object-contain"
-                        />
-                      ) : (
-                        <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center`}>
-                          {project.icon && <project.icon className="text-white" size={24} />}
-                        </div>
-                      )}
+                    <div className={`w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                      <Icon className="text-white" size={24} />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900 mb-1">
                       {project.name}
@@ -390,51 +365,47 @@ export default function ChatSaidLanding() {
       <section id="story" className="py-20 bg-gradient-to-br from-slate-50 to-indigo-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h3 className="font-display font-semibold text-step-4 text-gray-900 mb-4 tracking-tight-heading leading-heading">
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">
               The "Chat Said" Origin
             </h3>
-            <p className="font-body text-step-1 text-gray-600">
+            <p className="text-xl text-gray-600">
               From a casual conversation to a portfolio of innovation
             </p>
           </div>
 
           <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
             <div className="prose prose-lg max-w-none">
-              <p className="font-body text-step-0 text-gray-700 leading-relaxed mb-6">
-                ChatSaid began as a dialogue — not about one topic, but about everything that connects them.
-                Through conversation, ideas found structure. Feelings found language. Research became design.
+              <p className="text-gray-700 leading-relaxed mb-6">
+                It started simply: a friend working through mental health challenges found clarity through 
+                thoughtful conversations with ChatGPT. <em>"Well, chat said..."</em> became their shorthand 
+                for evidence-based insights, reframed with compassion and precision.
               </p>
-              <p className="font-body text-step-0 text-gray-700 leading-relaxed mb-6">
-                At first, it meant exploring how AI could support emotional clarity and mental health.
-                That same reflective process soon evolved into an engine for invention — uncovering links between therapy, cognition, computation, and creativity itself.
+              <p className="text-gray-700 leading-relaxed mb-6">
+                But it didn't stop there. The same conversational approach—asking questions, exploring ideas, 
+                iterating on concepts—opened doors across domains. What if AI could help detect corruption patterns? 
+                What if we reimagined NLP from first principles? What if fractal mathematics could transform 
+                how we organize information?
               </p>
-              <p className="font-body text-step-0 text-gray-700 leading-relaxed mb-6">
-                Each project here grew from that simple exchange:
-                human curiosity meeting machine attention.
-                What if we mapped emotion like code?
-                What if insight could be rendered as architecture, or empathy as interface?
-              </p>
-              <p className="font-body text-step-0 text-gray-700 leading-relaxed mb-6">
-                ChatSaid is the root system.
-                A portfolio of experiments in thinking — spanning psychology, design, and speculative computation — all guided by one principle:
-              </p>
-              <p className="font-body text-step-1 text-gray-700 leading-relaxed font-medium italic">
-                Everything begins with what chat said.
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Each project here emerged from that same creative partnership: human curiosity + AI capabilities. 
+                Some are grounded in established science (schema therapy, Gottman Method). Others push into 
+                uncharted territory (fractal data structures, alternative computing paradigms). All share a 
+                commitment to rigorous thinking and bold imagination.
               </p>
               
               <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-indigo-200 mt-8">
                 <div className="flex items-start gap-4">
                   <Sparkles className="text-indigo-600 flex-shrink-0 mt-1" size={32} />
                   <div>
-                    <p className="font-display font-semibold text-step-2 text-indigo-900 mb-3 tracking-tight-heading">
+                    <p className="text-lg font-semibold text-indigo-900 mb-3">
                       The Philosophy
                     </p>
-                    <p className="font-body text-step-0 text-gray-700 leading-relaxed mb-3">
+                    <p className="text-gray-700 leading-relaxed mb-3">
                       AI isn't a replacement for human expertise, creativity, or judgment. It's a thought partner—
                       exceptional at pattern recognition, synthesis, and rapid iteration. Used thoughtfully, 
                       it accelerates exploration and makes ambitious projects tractable for small teams (or individuals).
                     </p>
-                    <p className="font-body text-step-0 text-gray-700 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                       These projects demonstrate what's possible when human vision meets AI capabilities. 
                       Some are practical tools ready for use today. Others are research provocations, 
                       asking "what if?" Call it a lab, a portfolio, or an ongoing experiment in 
@@ -478,26 +449,22 @@ export default function ChatSaidLanding() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <img 
-                    src="/graphic-logo-mark.svg" 
-                    alt="ChatSaid Logo" 
-                    className="w-6 h-6"
-                  />
+                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                  <Sparkles className="text-white" size={18} />
                 </div>
-                <span className="font-display font-semibold text-white text-step-1">ChatSaid</span>
+                <span className="font-bold text-white">ChatSaid</span>
               </div>
-              <p className="font-body text-step--1 text-gray-400 mb-4">
+              <p className="text-sm text-gray-400 mb-4">
                 An AI-enhanced innovation lab exploring therapy tools, civic technology, and far-out computing concepts.
               </p>
-              <p className="font-body text-step--2 text-gray-500">
+              <p className="text-xs text-gray-500">
                 Projects span mental health, democracy, anti-corruption, NLP research, and alternative computing paradigms.
               </p>
             </div>
 
             <div>
-              <h5 className="font-display font-semibold text-white mb-4 text-step-0">Projects</h5>
-              <ul className="space-y-2 font-body text-step--1">
+              <h5 className="font-semibold text-white mb-4">Projects</h5>
+              <ul className="space-y-2 text-sm">
                 <li><a href="/kindline" className="hover:text-white transition-colors">Kindline</a></li>
                 <li><a href="/schema" className="hover:text-white transition-colors">Schema Explorer</a></li>
                 <li><a href="/democracy" className="hover:text-white transition-colors">Democracy Lab</a></li>
@@ -506,32 +473,17 @@ export default function ChatSaidLanding() {
             </div>
 
             <div>
-              <h5 className="font-display font-semibold text-white mb-4 text-step-0">Resources</h5>
-              <ul className="space-y-2 font-body text-step--1">
+              <h5 className="font-semibold text-white mb-4">Resources</h5>
+              <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">Crisis Resources</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Research Papers</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Open Source</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
-              
-              {/* Portfolio Link */}
-              <div className="mt-6 pt-4 border-t border-gray-800">
-                <a 
-                  href="https://corgfolio.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 font-body text-step--1 text-gray-400 hover:text-white transition-colors"
-                >
-                  <Dog size={16} className="text-amber-400" />
-                  <span>Hayden's Corg-folio</span>
-                  <ArrowRight size={12} className="opacity-60" />
-                </a>
-                <p className="font-body text-step--2 text-gray-500 mt-1">Full portfolio of MVP demos & projects</p>
-              </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 font-body text-step--2 text-center text-gray-500">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center text-gray-500">
             <p>© 2025 ChatSaid. An exploration in AI-enhanced innovation.</p>
             <p className="mt-1">Therapy tools are not substitutes for professional care. Research projects are conceptual.</p>
           </div>
