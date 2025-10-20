@@ -97,32 +97,6 @@ export default function ChatSaidLanding() {
 
     // CIVIC & DEMOCRACY TOOLS
     {
-      id: 'democracy-lab',
-      name: 'Democracy Lab',
-      category: 'civic' as const,
-      tagline: 'Tools for transparent governance',
-      description: 'Suite of civic engagement tools for participatory democracy, deliberation, and transparent decision-making.',
-      icon: Scale,
-      color: 'from-emerald-500 to-teal-500',
-      lightColor: 'from-emerald-50 to-teal-50',
-      href: '/democracy',
-      status: 'beta' as const,
-      tags: ['Democracy', 'Governance', 'Participation']
-    },
-    {
-      id: 'corruption-audit',
-      name: 'Corruption Auditor',
-      category: 'civic' as const,
-      tagline: 'Follow the money',
-      description: 'AI-powered analysis tools for detecting patterns in public spending, contracts, and potential corruption indicators.',
-      icon: Eye,
-      color: 'from-amber-500 to-orange-500',
-      lightColor: 'from-amber-50 to-orange-50',
-      href: '/audit',
-      status: 'beta' as const,
-      tags: ['Transparency', 'Public Finance', 'Accountability']
-    },
-    {
       id: 'civic-ai-tools',
       name: 'Civic AI Tools',
       category: 'civic' as const,
@@ -187,34 +161,8 @@ export default function ChatSaidLanding() {
       status: 'research' as const,
       tags: ['Transparency', 'Open Data', 'Accountability']
     },
-    {
-      id: 'darpa-challenges',
-      name: 'DARPA Challenges',
-      category: 'civic' as const,
-      tagline: 'Moonshot ideas for public good',
-      description: 'Mockup platform for crowdsourcing ambitious solutions to grand challenges in democracy, security, and social innovation.',
-      icon: Zap,
-      color: 'from-violet-500 to-purple-500',
-      lightColor: 'from-violet-50 to-purple-50',
-      href: '/darpa',
-      status: 'concept' as const,
-      tags: ['Innovation', 'Crowdsourcing', 'Grand Challenges']
-    },
 
     // FAR OUT COMPUTING CONCEPTS
-    {
-      id: 'nlp-experiments',
-      name: 'NLP Frontiers',
-      category: 'research' as const,
-      tagline: 'Rethinking language models',
-      description: 'Novel approaches to natural language processing: multi-modal embeddings, semantic topology, and context-aware architectures.',
-      icon: MessageCircle,
-      color: 'from-cyan-500 to-blue-500',
-      lightColor: 'from-cyan-50 to-blue-50',
-      href: '/nlp',
-      status: 'research' as const,
-      tags: ['NLP', 'Machine Learning', 'Linguistics']
-    },
     {
       id: 'fractal-tape',
       name: 'Fractal Tape',
@@ -253,19 +201,6 @@ export default function ChatSaidLanding() {
       href: 'https://github.com/bohselecta/glyph-core',
       status: 'research' as const,
       tags: ['Computation', 'Fractals', 'Memory']
-    },
-    {
-      id: 'semantic-space',
-      name: 'Semantic Space Navigation',
-      category: 'research' as const,
-      tagline: 'Navigating meaning geometrically',
-      description: 'Interface concepts for exploring high-dimensional semantic spaces as if they were physical landscapes.',
-      icon: Waypoints,
-      color: 'from-indigo-500 to-purple-500',
-      lightColor: 'from-indigo-50 to-purple-50',
-      href: '/semantic',
-      status: 'concept' as const,
-      tags: ['UI/UX', 'Embeddings', 'Visualization']
     },
     {
       id: 'dr-cursored',
