@@ -354,7 +354,7 @@ export default function ChatSaidLanding() {
   };
 
   return (
-    <div className="min-h-screen lg:min-h-[120vh] bg-gradient-to-br from-slate-50 via-white to-indigo-50">
+    <div className="min-h-screen lg:min-h-[140vh] bg-gradient-to-br from-slate-50 via-white to-indigo-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -394,6 +394,14 @@ export default function ChatSaidLanding() {
               >
                 Blog
               </Link>
+              <a 
+                href="https://www.chatsaid.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body font-medium text-step-0 text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                About
+              </a>
             </nav>
           </div>
         </div>
@@ -404,7 +412,7 @@ export default function ChatSaidLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-48">
           <div className="text-center max-w-5xl mx-auto">
             {/* Origin Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-full mb-8">
               <MessageCircle className="text-indigo-600" size={16} />
               <span className="text-sm font-medium text-gray-900">
                 "Well, <em>chat said</em>..." — and the ideas kept coming
@@ -432,16 +440,34 @@ export default function ChatSaidLanding() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                onClick={() => {
+                  const element = document.getElementById('projects');
+                  if (element) {
+                    element.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start',
+                      inline: 'nearest'
+                    });
+                  }
+                }}
+                className="px-8 py-4 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 flex items-center justify-center gap-2 min-h-[56px] w-full sm:w-auto cursor-pointer"
                 style={{ backgroundColor: '#303B48' }}
               >
                 Explore Projects
                 <ArrowRight size={20} />
               </button>
               <button
-                onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold shadow-md hover:shadow-lg transition-all border-2 border-gray-200"
+                onClick={() => {
+                  const element = document.getElementById('story');
+                  if (element) {
+                    element.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start',
+                      inline: 'nearest'
+                    });
+                  }
+                }}
+                className="px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-all duration-200 border-2 border-gray-300 hover:border-gray-400 min-h-[56px] flex items-center justify-center w-full sm:w-auto cursor-pointer"
               >
                 Read the Story
               </button>
