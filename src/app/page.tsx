@@ -205,12 +205,12 @@ export default function ChatSaidLanding() {
               >
                 Story
               </button>
-              <button 
-                onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
+              <Link 
+                href="/blog"
                 className="font-body font-medium text-step-0 text-gray-600 hover:text-gray-900 transition-colors"
               >
-                Philosophy
-              </button>
+                Blog
+              </Link>
             </nav>
           </div>
         </div>
@@ -241,12 +241,9 @@ export default function ChatSaidLanding() {
             </h2>
 
             {/* Subheadline */}
-            <p className="font-body text-step-1 text-gray-600 mb-4 leading-relaxed">
+            <p className="font-body text-step-1 text-gray-600 mb-8 leading-relaxed">
               A portfolio of AI-enhanced projects spanning mental health, civic technology, 
               democracy tools, and far-out computing concepts.
-            </p>
-            <p className="font-body text-step-0 text-gray-500 mb-8">
-              Each one started with a conversation. Each one pushes boundaries.
             </p>
 
             {/* Category Pills */}
@@ -269,7 +266,8 @@ export default function ChatSaidLanding() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                className="px-8 py-4 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                style={{ backgroundColor: '#303B48' }}
               >
                 Explore Projects
                 <ArrowRight size={20} />
@@ -304,9 +302,10 @@ export default function ChatSaidLanding() {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
                     isActive
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
+                      ? 'text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
+                  style={isActive ? { backgroundColor: '#2767C4' } : {}}
                 >
                   <Icon size={18} />
                   {cat.label}
