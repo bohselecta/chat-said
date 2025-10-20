@@ -10,11 +10,25 @@ import {
 import Link from 'next/link';
 
 type Category = 'all' | 'therapy' | 'civic' | 'research';
+type Status = 'live' | 'beta' | 'concept' | 'research';
 
 export default function ChatSaidLanding() {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
 
-  const projects = [
+  const projects: Array<{
+    id: string;
+    name: string;
+    category: Category;
+    tagline: string;
+    description: string;
+    logo?: string;
+    icon?: any;
+    color: string;
+    lightColor: string;
+    href: string;
+    status: Status;
+    tags: string[];
+  }> = [
     // THERAPY TOOLS
     {
       id: 'kindline',
