@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "chatsaid-taurus": {
+      "command": "node",
+      "args": ["apps/forge/mcp-stdio.mjs"],
+      "env": {
+        "TAURUS_DATA_DIR": "./data",
+        "TAURUS_AGENT_WRITE": "0"
+      }
+    }
+  }
+}
