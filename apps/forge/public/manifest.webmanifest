@@ -1,0 +1,12 @@
+{
+  "name": "ChatSaid Taurus",
+  "short_name": "Taurus",
+  "description": "Private Talk → Plan → Make projects on hardware you own.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080a0e",
+  "theme_color": "#0a0c11",
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

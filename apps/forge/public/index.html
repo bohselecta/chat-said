@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0c11">
+  <meta name="description" content="ChatSaid Taurus — private Talk → Plan → Make projects on hardware you own.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <title>ChatSaid · Taurus</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar">
+      <header class="brand-block">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <div class="brand-name">ChatSaid</div>
+          <div class="brand-sub">Taurus · Talk → Plan → Make</div>
+        </div>
+      </header>
+
+      <button id="new-project" class="new-project-button"><span>＋</span> New project</button>
+      <div class="side-label">Projects</div>
+      <nav id="project-list" class="project-list" aria-label="Projects"></nav>
+      <footer class="side-footer">
+        <div id="server-dot" class="server-state"><span class="dot"></span><span>Connecting…</span></div>
+        <button id="install-app" class="text-button" hidden>Install app</button>
+      </footer>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="project-heading">
+          <span id="project-kicker" class="kicker">Private project canvas</span>
+          <h1 id="project-title">Choose or create a project</h1>
+        </div>
+        <div class="top-actions">
+          <button id="copy-agent" class="secondary-button" disabled>Agent handoff</button>
+          <button id="export-project" class="secondary-button" disabled>Export</button>
+          <button id="make-now" class="primary-button" disabled>Make now</button>
+        </div>
+      </header>
+
+      <nav class="mode-tabs" aria-label="Project modes">
+        <button data-tab="talk" class="mode-tab active"><span class="tab-number">01</span>Talk</button>
+        <button data-tab="plan" class="mode-tab"><span class="tab-number">02</span>Plan</button>
+        <button data-tab="make" class="mode-tab"><span class="tab-number">03</span>Make</button>
+        <button data-tab="library" class="mode-tab"><span class="tab-number">04</span>Library</button>
+        <button data-tab="connect" class="mode-tab"><span class="tab-number">05</span>Connect</button>
+      </nav>
+
+      <main id="main-content" class="main-content">
+        <section id="empty-state" class="empty-state">
+          <div class="empty-orbit"><div class="empty-core"></div></div>
+          <p class="kicker">Everything begins with what you said.</p>
+          <h2>Talk into a project.<br>The project becomes real.</h2>
+          <p>Create a private project canvas, speak naturally, and let Taurus reconcile every note into one canonical plan before it builds the usable result.</p>
+          <button id="empty-new-project" class="primary-button">Create your first project</button>
+        </section>
+
+        <section id="talk-panel" class="panel" hidden>
+          <div class="talk-grid">
+            <div class="capture-card">
+              <div class="capture-header">
+                <div>
+                  <span class="kicker">Taurus Pocket</span>
+                  <h2>Say what the project needs.</h2>
+                </div>
+                <div id="recording-timer" class="timer">00:00</div>
+              </div>
+              <div id="waveform" class="waveform" aria-hidden="true"></div>
+              <button id="record-button" class="record-button" aria-label="Start recording">
+                <span class="record-ring"><span class="record-core"></span></span>
+                <span id="record-label">Start speaking</span>
+              </button>
+              <div class="capture-status-row">
+                <span id="audio-status">Microphone idle</span>
+                <span id="transcript-status">Text is saved only when you send it</span>
+              </div>
+              <label class="privacy-toggle">
+                <input id="browser-recognition" type="checkbox">
+                <span>
+                  <strong>Use browser live transcription</strong>
+                  <small>Convenient when supported; may use your browser vendor’s speech service. Leave off for local-only audio.</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="note-card">
+              <div class="note-card-head">
+                <div>
+                  <span class="kicker">Working note</span>
+                  <h2>Edit before sending.</h2>
+                </div>
+                <button id="clear-note" class="text-button">Clear</button>
+              </div>
+              <textarea id="note-text" placeholder="Your transcript appears here. You can also type, paste, or revise it before it enters the project queue."></textarea>
+              <div class="note-meta">
+                <span id="word-count">0 words</span>
+                <span id="audio-attached">No audio attached</span>
+              </div>
+              <div class="note-actions">
+                <button id="save-clip-from-note" class="secondary-button">Copy & save</button>
+                <button id="send-note" class="primary-button">Send to project queue</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div><span class="kicker">Incoming stream</span><h2>Each idea becomes one transaction.</h2></div>
+            <span id="queue-count" class="counter">0 waiting</span>
+          </div>
+          <div id="queue-list" class="queue-list"></div>
+        </section>
+
+        <section id="plan-panel" class="panel" hidden>
+          <div class="split-header">
+            <div><span class="kicker">Taurus Forge</span><h2>One canonical specification.</h2><p>Every note is applied independently, aligned with the whole project, and saved as a revision.</p></div>
+            <div class="revision-badge">Revision <strong id="revision-number">0</strong></div>
+          </div>
+          <div class="plan-layout">
+            <div class="spec-card">
+              <div class="card-toolbar">
+                <span>TAURUS.md</span>
+                <div><button id="copy-spec" class="text-button">Copy</button><button id="save-spec" class="secondary-button">Save edit</button></div>
+              </div>
+              <textarea id="spec-editor" spellcheck="true"></textarea>
+            </div>
+            <aside class="revision-card">
+              <span class="kicker">Revision ledger</span>
+              <div id="revision-list" class="revision-list"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="make-panel" class="panel" hidden>
+          <div class="make-hero">
+            <div>
+              <span class="kicker">Taurus Make</span>
+              <h2>Walk over and use what you described.</h2>
+              <p id="make-description">When the queue becomes quiet—or when you press Make now—Taurus assembles the latest canonical specification into a working project surface.</p>
+            </div>
+            <div class="make-status-card">
+              <span>Build state</span>
+              <strong id="build-state">Not built yet</strong>
+              <small id="build-detail">The first artifact will appear here.</small>
+            </div>
+          </div>
+          <div id="artifact-empty" class="artifact-empty">
+            <div class="artifact-glyph">✦</div>
+            <h3>The project is ready to materialize.</h3>
+            <p>Use Make now to build immediately. Automatic Make runs after the project queue has been quiet for the configured interval.</p>
+            <button id="make-empty-button" class="primary-button">Make this project</button>
+          </div>
+          <div id="artifact-shell" class="artifact-shell" hidden>
+            <div class="artifact-toolbar">
+              <div><strong id="artifact-title">Artifact</strong><span id="artifact-meta"></span></div>
+              <div><button id="open-artifact" class="secondary-button">Open full screen</button><button id="rebuild-artifact" class="primary-button">Rebuild</button></div>
+            </div>
+            <iframe id="artifact-frame" title="Generated project artifact"></iframe>
+          </div>
+        </section>
+
+        <section id="library-panel" class="panel" hidden>
+          <div class="split-header">
+            <div><span class="kicker">Project memory</span><h2>Nothing useful disappears into the clipboard.</h2><p>Original notes, edited clips, recordings, revisions, and artifacts remain attached to the project.</p></div>
+            <button id="new-library-clip" class="primary-button">Save a clip</button>
+          </div>
+          <div class="library-grid">
+            <div><h3>Saved clips</h3><div id="clip-list" class="library-list"></div></div>
+            <div><h3>Applied notes</h3><div id="note-history" class="library-list"></div></div>
+          </div>
+        </section>
+
+        <section id="connect-panel" class="panel" hidden>
+          <div class="split-header">
+            <div><span class="kicker">Taurus Bridge</span><h2>Give your tools a deliberate door.</h2><p>Projects remain ordinary folders and also expose local APIs and MCP tools for authorized Codex, Cursor, and other computer-using agents.</p></div>
+          </div>
+          <div class="connect-grid">
+            <article class="connection-card"><span class="kicker">Project folder</span><code id="project-path">—</code><button data-copy-target="project-path" class="secondary-button">Copy path</button></article>
+            <article class="connection-card"><span class="kicker">Canonical spec</span><code id="spec-path">—</code><button data-copy-target="spec-path" class="secondary-button">Copy path</button></article>
+            <article class="connection-card"><span class="kicker">Local API</span><code id="api-path">—</code><button data-copy-target="api-path" class="secondary-button">Copy URL</button></article>
+            <article class="connection-card"><span class="kicker">MCP endpoint</span><code id="mcp-path">—</code><button data-copy-target="mcp-path" class="secondary-button">Copy URL</button></article>
+          </div>
+          <div class="agent-card">
+            <div class="card-toolbar"><span>Agent handoff instruction</span><button id="copy-agent-instruction" class="secondary-button">Copy instruction</button></div>
+            <pre id="agent-instruction"></pre>
+          </div>
+          <div class="agent-card intelligence-card">
+            <div class="card-toolbar"><span>Local intelligence engines</span><button id="save-runtime-settings" class="primary-button">Save engines</button></div>
+            <div class="engine-form">
+              <label>OpenAI-compatible chat-completions URL<input id="llm-url" placeholder="http://localhost:12434/engines/v1/chat/completions"></label>
+              <label>Model ID<input id="llm-model" placeholder="ai/qwen2.5-coder"></label>
+              <label>API key (usually unnecessary locally)<input id="llm-key" type="password" placeholder="not-needed"></label>
+              <label class="privacy-toggle"><input id="llm-artifacts" type="checkbox"><span><strong>Use the local LLM to shape artifact manifests</strong><small>Deterministic artifact generation remains the fallback.</small></span></label>
+              <label class="engine-wide">Local whisper.cpp command<input id="whisper-command" placeholder="whisper-cli -m ./models/ggml-base.en.bin -f {input} -otxt -of {output}"></label>
+            </div>
+          </div>
+          <div class="wake-card">
+            <div><span class="kicker">Wake a capable device</span><h3>Send a Wake-on-LAN packet</h3><p>A running Taurus node can wake a configured Forge PC on the same network.</p></div>
+            <div class="wake-form"><input id="wake-mac" placeholder="AA:BB:CC:DD:EE:FF"><input id="wake-address" value="255.255.255.255"><button id="wake-button" class="primary-button">Wake</button></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="pair-dialog" class="modal" aria-labelledby="pair-title">
+    <form method="dialog" id="pair-form">
+      <span class="kicker">Private local node</span>
+      <h2 id="pair-title">Pair this device</h2>
+      <p>Enter the six-digit code shown in the Taurus Forge terminal. The token stays on this browser.</p>
+      <input id="pair-code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000" required>
+      <input id="pair-label" placeholder="Device name" value="My device">
+      <div id="pair-error" class="error-text"></div>
+      <button class="primary-button" value="default">Pair with Taurus</button>
+    </form>
+  </dialog>
+
+  <dialog id="project-dialog" class="modal">
+    <form method="dialog" id="project-form">
+      <span class="kicker">New private canvas</span>
+      <h2>Create a project</h2>
+      <label>Name<input id="new-project-name" required placeholder="What are you making?"></label>
+      <label>Starting description<textarea id="new-project-description" placeholder="A sentence is enough. You can talk the rest into it."></textarea></label>
+      <label>Automatic Make after quiet minutes<input id="new-project-quiet" type="number" min="1" max="1440" value="15"></label>
+      <div class="modal-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="primary-button" value="default">Create project</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="clip-dialog" class="modal">
+    <form method="dialog" id="clip-form">
+      <span class="kicker">Save exact working text</span>
+      <h2>Copy & save</h2>
+      <label>Title<input id="clip-title" value="Working clip"></label>
+      <label>Text<textarea id="clip-text" required></textarea></label>
+      <div class="modal-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="primary-button" value="default">Save and copy</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+  <script src="/app-2.js"></script>
+  <script src="/app-3.js"></script>
+  <script src="/app-4.js"></script>
+</body>
+</html>
