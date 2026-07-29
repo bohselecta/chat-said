@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.Taurus" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#53E1D5</item>
+        <item name="android:navigationBarColor">#080A0E</item>
+        <item name="android:statusBarColor">#080A0E</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
