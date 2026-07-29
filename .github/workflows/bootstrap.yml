@@ -1,8 +1,7 @@
 name: Materialize and verify ChatSaid Taurus
 
 on:
-  push:
-    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -14,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Check out bootstrap commit
+      - name: Check out main bootstrap commit
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Extract complete source tree
@@ -62,7 +62,7 @@ jobs:
         working-directory: apps/pocket-android
         run: gradle --no-daemon :app:assembleDebug
 
-      - name: Commit verified source tree
+      - name: Commit verified source tree to main
         shell: bash
         run: |
           set -euo pipefail
@@ -71,5 +71,3 @@ jobs:
           git add -A
           git commit -m "Build complete ChatSaid Taurus system"
           git push origin HEAD:main
-
-# Triggered through the GitHub contents API so Actions verifies before materializing source.
