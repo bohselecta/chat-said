@@ -1,11 +1,11 @@
 {
-  "name": "ChatSaid Taurus",
-  "short_name": "Taurus",
+  "name": "Tong Buku",
+  "short_name": "Tong Buku",
   "description": "Private Talk → Plan → Make projects on hardware you own.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#080a0e",
-  "theme_color": "#0a0c11",
+  "background_color": "#050811",
+  "theme_color": "#050811",
   "icons": [
     { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
