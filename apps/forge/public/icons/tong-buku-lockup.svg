@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="title desc">
+  <title id="title">Tong Buku</title><desc id="desc">Tong Buku logo, grab move organize.</desc>
+  <defs>
+    <linearGradient id="b" x1="45" y1="25" x2="150" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#49A3FF"/><stop offset=".55" stop-color="#1665FF"/><stop offset="1" stop-color="#0B3FC7"/></linearGradient>
+    <linearGradient id="m" x1="100" y1="84" x2="205" y2="215" gradientUnits="userSpaceOnUse"><stop stop-color="#9CFFF0"/><stop offset="1" stop-color="#4FE0CF"/></linearGradient>
+  </defs>
+  <g transform="translate(0,-18) scale(.86)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 132h29" stroke="#FFB020" stroke-width="8"/><path d="M30 153h36" stroke="#72F2E2" stroke-width="7"/><path d="M43 174h29" stroke="#2B7BFF" stroke-width="7"/>
+    <circle cx="105" cy="42" r="18" stroke="url(#b)" stroke-width="12"/><path d="M94 60 69 126l36 25 23-72M115 61l36 44M96 126l33-23" stroke="url(#b)" stroke-width="14"/>
+    <path d="M119 99h67l31 31v74a16 16 0 0 1-16 16h-82a16 16 0 0 1-16-16v-89a16 16 0 0 1 16-16Z" fill="#08111D" stroke="url(#m)" stroke-width="11"/>
+    <path d="M186 100v30h30M130 150h56M130 173h56M130 196h39" stroke="#77F1E1" stroke-width="9"/>
+  </g>
+  <text x="225" y="115" fill="#F4F6F8" font-family="Space Grotesk,Inter,Arial,sans-serif" font-size="76" font-weight="650" letter-spacing="-3">Tong</text>
+  <text x="405" y="115" fill="#2563FF" font-family="Space Grotesk,Inter,Arial,sans-serif" font-size="76" font-weight="700" letter-spacing="-3">Buku</text>
+  <text x="232" y="163" font-family="Space Grotesk,Inter,Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="8"><tspan fill="#7CFFE6">GRAB.</tspan><tspan fill="#2563FF"> MOVE.</tspan><tspan fill="#FFB020"> ORGANIZE.</tspan></text>
+</svg>

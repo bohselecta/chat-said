@@ -1,54 +1,37 @@
-# Tong Buku Brand Direction
+# Tong Buku — Final Brand System
 
-## Core idea
+Tong Buku is the public product identity for the Talk → Plan → Make system. Taurus remains an internal architecture name where existing code and protocols depend on it.
 
-Tong Buku is the visual identity for the private project memory system inside ChatSaid/Taurus.
+## Brand idea
 
-The mark already communicates the essential metaphor: small tongs carrying a document. It represents holding, carrying, preserving, and moving human thought into a usable artifact.
+The mark is a precise gripper carrying a document. It communicates capture, transport, preservation, and materialization without explaining the name.
 
-The name remains intentionally unfamiliar. It does not need translation for an American audience. The unfamiliarity creates curiosity while the icon communicates function.
+**Public line:** `GRAB. MOVE. ORGANIZE.`
 
-## Brand Position
+## Visual system
 
-Tong Buku is a private thought-to-artifact workspace.
+- Deep navy and near-black surfaces
+- Electric-blue LED primary action and state
+- Mint/cyan information and capture signal
+- Amber used sparingly for motion and Make
+- Off-white typography and white-plastic hardware references
+- Clean industrial geometry rather than RGB gaming ornament
+- Atmospheric product imagery may use chiaroscuro, sfumato, studio equipment, and near-future command-center environments
 
-Speak freely. Preserve ideas. Build from them.
+## Source assets
 
-## Visual Language
+- `apps/forge/public/icons/tong-buku-mark.svg`
+- `apps/forge/public/icons/tong-buku-lockup.svg`
+- `apps/forge/public/icons/tong-buku-mono.svg`
+- `apps/forge/public/icons/icon.svg`
+- `apps/forge/public/brand.css`
 
-- Keep the document-carrying tongs as the hero symbol.
-- Remove dependence on Chinese text for the primary western-facing brand.
-- Preserve the original warmth and handmade character.
-- Upgrade the execution into a premium software identity.
+## Product naming
 
-## Recommended Mark System
+- Tong Buku Pocket — handheld/mobile capture surface
+- Tong Buku Forge — capable-device sequential reconciliation and build runtime
+- Tong Buku Desk — browser workspace
+- Tong Buku Make — artifact materialization
+- Tong Buku Bridge — filesystem/API/MCP access
 
-Primary:
-- Tong Buku wordmark
-- Document/tongs symbol
-
-Secondary:
-- Icon only for app launcher
-- Monogram/avatar use
-- Favicon
-
-## UI Direction
-
-Warm technical:
-- paper texture
-- archive/library feeling
-- modern productivity software
-- subtle mechanical precision
-
-Avoid:
-- generic AI sparkle imagery
-- robot assistants
-- futuristic neon clichés
-
-## Product Metaphor
-
-Tong Buku carries ideas from speech into structure:
-
-Voice → Notes → Project Memory → Spec → Artifact
-
-The tongs are the bridge.
+Do not use Chinese characters in the public identity. Do not replace the tong-and-document metaphor with generic AI imagery.
