@@ -71,3 +71,5 @@ jobs:
           git add -A
           git commit -m "Build complete ChatSaid Taurus system"
           git push origin HEAD:main
+
+# Triggered through the GitHub contents API so Actions verifies before materializing source.
