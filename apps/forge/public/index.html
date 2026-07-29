@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0a0c11">
-  <meta name="description" content="ChatSaid Taurus — private Talk → Plan → Make projects on hardware you own.">
+  <meta name="theme-color" content="#050811">
+  <meta name="description" content="Tong Buku — private Talk → Plan → Make projects on hardware you own.">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
-  <title>ChatSaid · Taurus</title>
+  <link rel="stylesheet" href="/brand.css">
+  <title>Tong Buku · Talk → Plan → Make</title>
 </head>
 <body>
   <div id="app" class="app-shell">
@@ -16,8 +17,8 @@
       <header class="brand-block">
         <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
         <div>
-          <div class="brand-name">ChatSaid</div>
-          <div class="brand-sub">Taurus · Talk → Plan → Make</div>
+          <div class="brand-name">Tong Buku</div>
+          <div class="brand-sub">Grab · Move · Organize</div>
         </div>
       </header>
 
@@ -52,12 +53,18 @@
       </nav>
 
       <main id="main-content" class="main-content">
-        <section id="empty-state" class="empty-state">
-          <div class="empty-orbit"><div class="empty-core"></div></div>
-          <p class="kicker">Everything begins with what you said.</p>
-          <h2>Talk into a project.<br>The project becomes real.</h2>
-          <p>Create a private project canvas, speak naturally, and let Taurus reconcile every note into one canonical plan before it builds the usable result.</p>
-          <button id="empty-new-project" class="primary-button">Create your first project</button>
+        <section id="empty-state" class="empty-state tong-buku-welcome">
+          <div class="welcome-copy">
+            <img class="welcome-lockup" src="/icons/tong-buku-lockup.svg" alt="Tong Buku — Grab. Move. Organize.">
+            <p class="kicker">Private speech becomes usable work.</p>
+            <h2>Say it privately.<br>Walk over and use it.</h2>
+            <p>Create a project, speak naturally, and let Tong Buku reconcile every note into one canonical plan—one thought at a time—before it materializes the result.</p>
+            <div class="welcome-actions"><button id="empty-new-project" class="primary-button">Create your first project</button><span class="server-state online"><span class="dot"></span><span>Local-first by design</span></span></div>
+            <div class="welcome-promise"><span>Talk by project</span><span>Plan sequentially</span><span>Make from canonical state</span></div>
+          </div>
+          <div class="welcome-visual" role="img" aria-label="Tong Buku private capture device and desktop workspace">
+            <div class="welcome-visual-badge"><div><strong>The future pocket recorder is here.</strong><br><span>Capture anywhere. Build on hardware you own.</span></div><i aria-hidden="true"></i></div>
+          </div>
         </section>
 
         <section id="talk-panel" class="panel" hidden>
@@ -65,7 +72,7 @@
             <div class="capture-card">
               <div class="capture-header">
                 <div>
-                  <span class="kicker">Taurus Pocket</span>
+                  <span class="kicker">Tong Buku Pocket</span>
                   <h2>Say what the project needs.</h2>
                 </div>
                 <div id="recording-timer" class="timer">00:00</div>
@@ -117,7 +124,7 @@
 
         <section id="plan-panel" class="panel" hidden>
           <div class="split-header">
-            <div><span class="kicker">Taurus Forge</span><h2>One canonical specification.</h2><p>Every note is applied independently, aligned with the whole project, and saved as a revision.</p></div>
+            <div><span class="kicker">Tong Buku Forge</span><h2>One canonical specification.</h2><p>Every note is applied independently, aligned with the whole project, and saved as a revision.</p></div>
             <div class="revision-badge">Revision <strong id="revision-number">0</strong></div>
           </div>
           <div class="plan-layout">
@@ -138,9 +145,9 @@
         <section id="make-panel" class="panel" hidden>
           <div class="make-hero">
             <div>
-              <span class="kicker">Taurus Make</span>
+              <span class="kicker">Tong Buku Make</span>
               <h2>Walk over and use what you described.</h2>
-              <p id="make-description">When the queue becomes quiet—or when you press Make now—Taurus assembles the latest canonical specification into a working project surface.</p>
+              <p id="make-description">When the queue becomes quiet—or when you press Make now—Tong Buku assembles the latest canonical specification into a working project surface.</p>
             </div>
             <div class="make-status-card">
               <span>Build state</span>
@@ -176,7 +183,7 @@
 
         <section id="connect-panel" class="panel" hidden>
           <div class="split-header">
-            <div><span class="kicker">Taurus Bridge</span><h2>Give your tools a deliberate door.</h2><p>Projects remain ordinary folders and also expose local APIs and MCP tools for authorized Codex, Cursor, and other computer-using agents.</p></div>
+            <div><span class="kicker">Tong Buku Bridge</span><h2>Give your tools a deliberate door.</h2><p>Projects remain ordinary folders and also expose local APIs and MCP tools for authorized Codex, Cursor, and other computer-using agents.</p></div>
           </div>
           <div class="connect-grid">
             <article class="connection-card"><span class="kicker">Project folder</span><code id="project-path">—</code><button data-copy-target="project-path" class="secondary-button">Copy path</button></article>
@@ -199,7 +206,7 @@
             </div>
           </div>
           <div class="wake-card">
-            <div><span class="kicker">Wake a capable device</span><h3>Send a Wake-on-LAN packet</h3><p>A running Taurus node can wake a configured Forge PC on the same network.</p></div>
+            <div><span class="kicker">Wake your Forge device</span><h3>Send a Wake-on-LAN packet</h3><p>A running Tong Buku node can wake a configured Forge PC on the same network.</p></div>
             <div class="wake-form"><input id="wake-mac" placeholder="AA:BB:CC:DD:EE:FF"><input id="wake-address" value="255.255.255.255"><button id="wake-button" class="primary-button">Wake</button></div>
           </div>
         </section>
@@ -209,13 +216,13 @@
 
   <dialog id="pair-dialog" class="modal" aria-labelledby="pair-title">
     <form method="dialog" id="pair-form">
-      <span class="kicker">Private local node</span>
+      <span class="kicker">Private Tong Buku node</span>
       <h2 id="pair-title">Pair this device</h2>
-      <p>Enter the six-digit code shown in the Taurus Forge terminal. The token stays on this browser.</p>
+      <p>Enter the six-digit code shown in the Tong Buku Forge terminal. The token stays on this browser.</p>
       <input id="pair-code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000" required>
       <input id="pair-label" placeholder="Device name" value="My device">
       <div id="pair-error" class="error-text"></div>
-      <button class="primary-button" value="default">Pair with Taurus</button>
+      <button class="primary-button" value="default">Pair with Tong Buku</button>
     </form>
   </dialog>
 
