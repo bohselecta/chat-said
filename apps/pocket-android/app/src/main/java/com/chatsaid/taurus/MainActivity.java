@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 
     private void buildWebView() {
         webView = new WebView(this);
-        webView.setBackgroundColor(0xFF080A0E);
+        webView.setBackgroundColor(0xFF050811);
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
@@ -120,8 +120,8 @@ public class MainActivity extends Activity {
         wrap.setPadding(pad, 0, pad, 0);
         wrap.addView(input, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT));
         new AlertDialog.Builder(this)
-            .setTitle("Connect Taurus Pocket")
-            .setMessage("Enter the LAN address shown by Taurus Forge. Long-press anywhere later to change it.")
+            .setTitle("Connect Tong Buku Pocket")
+            .setMessage("Enter the LAN address shown by Tong Buku Forge. Long-press anywhere later to change it.")
             .setView(wrap)
             .setCancelable(!prefs.getString(KEY_URL, "").isEmpty())
             .setPositiveButton("Connect", (dialog, which) -> {
@@ -129,14 +129,14 @@ public class MainActivity extends Activity {
                 prefs.edit().putString(KEY_URL, url).apply();
                 webView.loadUrl(url);
             })
-            .setNeutralButton("Find Taurus", (dialog, which) -> discoverForge())
+            .setNeutralButton("Find Tong Buku", (dialog, which) -> discoverForge())
             .setNegativeButton("Cancel", null)
             .show();
     }
 
     private void discoverForge() {
         NsdManager manager = (NsdManager) getSystemService(Context.NSD_SERVICE);
-        Toast.makeText(this, "Looking for Taurus Forge…", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Looking for Tong Buku Forge…", Toast.LENGTH_SHORT).show();
         discoveryListener = new NsdManager.DiscoveryListener() {
             @Override public void onDiscoveryStarted(String type) {}
             @Override public void onDiscoveryStopped(String type) {}
@@ -151,7 +151,7 @@ public class MainActivity extends Activity {
                         stopDiscovery(manager);
                         String url = "http://" + info.getHost().getHostAddress() + ":" + info.getPort();
                         runOnUiThread(() -> new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Taurus Forge found")
+                            .setTitle("Tong Buku Forge found")
                             .setMessage(url)
                             .setPositiveButton("Connect", (d, w) -> { prefs.edit().putString(KEY_URL, url).apply(); webView.loadUrl(url); })
                             .setNegativeButton("Cancel", null)
