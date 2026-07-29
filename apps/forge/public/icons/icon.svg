@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53e1d5"/><stop offset="1" stop-color="#a98cff"/></linearGradient></defs>
-  <rect width="512" height="512" rx="112" fill="#0b0e14"/>
-  <circle cx="256" cy="256" r="154" fill="none" stroke="#273342" stroke-width="12"/>
-  <ellipse cx="256" cy="256" rx="196" ry="72" fill="none" stroke="url(#g)" stroke-width="14" transform="rotate(-22 256 256)"/>
-  <circle cx="256" cy="256" r="54" fill="url(#g)"/>
-  <path d="M172 278h26v60h-26zm57-110h26v170h-26zm57 48h26v122h-26zm57-85h26v207h-26z" fill="#f5f7fb" opacity=".9"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#050811"/></linearGradient>
+    <linearGradient id="blue" x1="90" y1="70" x2="310" y2="390" gradientUnits="userSpaceOnUse"><stop stop-color="#49A3FF"/><stop offset=".55" stop-color="#1665FF"/><stop offset="1" stop-color="#0B3FC7"/></linearGradient>
+    <linearGradient id="mint" x1="210" y1="170" x2="420" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#9CFFF0"/><stop offset="1" stop-color="#4FE0CF"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M42 250h58" stroke="#FFB020" stroke-width="17" stroke-linecap="round"/><path d="M63 291h71" stroke="#72F2E2" stroke-width="14" stroke-linecap="round"/><path d="M83 331h57" stroke="#2B7BFF" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="209" cy="91" r="37" fill="#07101D" stroke="url(#blue)" stroke-width="23"/>
+  <path d="M188 128 138 259l71 50 47-145M228 130l71 88M191 257l66-45" fill="none" stroke="url(#blue)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M239 205h134l62 62v148a32 32 0 0 1-32 32H239a32 32 0 0 1-32-32V237a32 32 0 0 1 32-32Z" fill="#07111E" stroke="url(#mint)" stroke-width="22" stroke-linejoin="round"/>
+  <path d="M373 207v60h60M261 306h112M261 352h112M261 398h78" fill="none" stroke="#77F1E1" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
